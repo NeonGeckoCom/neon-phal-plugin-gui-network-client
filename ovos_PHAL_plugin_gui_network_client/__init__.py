@@ -47,12 +47,14 @@ class GuiNetworkClientPlugin(PHALPlugin):
         }))
     
     def handle_registered(self, message=None):
-        get_id = message.data.get("id", "")
-        self.client_id = get_id
-        self.registered = True        
-        self.bus.on(f"ovos.phal.wifi.plugin.activate.{self.client_id}", self.handle_activate_client_request)
-        self.bus.on(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}", self.handle_deactivate_client_request)
-        LOG.info(f"Client Registered with WIFI Plugin: {self.client_id}")
+        get_client = message.data.get("client", "")
+        if get_client == self.name:
+            get_id = message.data.get("id", "")
+            self.client_id = get_id
+            self.registered = True        
+            self.bus.on(f"ovos.phal.wifi.plugin.activate.{self.client_id}", self.handle_activate_client_request)
+            self.bus.on(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}", self.handle_deactivate_client_request)
+            LOG.info(f"Client Registered with WIFI Plugin: {self.client_id}")
     
     def handle_deregistered(self, message=None):
         self.registered = False
@@ -149,9 +151,10 @@ class GuiNetworkClientPlugin(PHALPlugin):
             self.gui.show_page(page, override_animations=True)
             
     def handle_stop_setup(self, message=None):
-        self.handle_deactivate()
+        self.request_deactivate()
         
     def shutdown(self):
+        self.handle_stop_setup()
         super().shutdown()
 
     # speech
