@@ -16,44 +16,83 @@ class GuiNetworkClientPlugin(PHALPlugin):
         self.gui = GUIInterface(bus=self.bus, skill_id=self.name)
         self.connected_network = None
         self.client_active = False
-
+        self.client_id = None
+        self.registered = False
+        
+        # WIFI Plugin Registeration and Activation Specific Events        
+        self.bus.on("ovos.phal.wifi.plugin.stop.setup.event", self.handle_stop_setup)
+        self.bus.on("ovos.phal.wifi.plugin.client.registered", self.handle_registered)
+        self.bus.on("ovos.phal.wifi.plugin.client.deregistered", self.handle_deregistered)
+        self.bus.on("ovos.phal.wifi.plugin.client.registration.failure", self.handle_registration_failure)
+        
         # OVOS PHAL NM EVENTS
-        self.bus.on("ovos.phal.nm.activate.gui.client", self.handle_activate)
-        self.bus.on("ovos.phal.nm.is.connected", self.handle_is_connected)
-
         self.bus.on("ovos.phal.nm.connection.successful", self.display_success)
         self.bus.on("ovos.phal.nm.connection.failure", self.display_failure)
-
-        # OVOS PHAL NM MODE SELECT IF GUI IS PRESENT AND INPUT IS AVAILABLE
-        self.bus.on("ovos.phal.nm.client.mode.selector",
-                    self.display_mode_select)
 
         # INTERNAL GUI EVENTS
         self.bus.on("ovos.phal.gui.network.client.back",
                     self.display_path_exit)
+        
+        # Try Register the Client with WIFI Plugin on Startup
+        self.register_client()
+        
+    # Wifi Plugin Registeration Handling
+    def register_client(self):
+        self.bus.emit(Message("ovos.phal.wifi.plugin.register.client", {
+            "client": self.name,
+            "type": "onDevice",
+            "display_text": "On Device Setup",
+            "has_gui": True,
+            "requires_input": True
+        }))
+    
+    def handle_registered(self, message=None):
+        get_id = message.data.get("id", "")
+        self.client_id = get_id
+        self.registered = True        
+        self.bus.on(f"ovos.phal.wifi.plugin.activate.{self.client_id}", self.handle_activate_client_request)
+        self.bus.on(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}", self.handle_deactivate_client_request)
+        LOG.info(f"Client Registered with WIFI Plugin: {self.client_id}")
+    
+    def handle_deregistered(self, message=None):
+        self.registered = False
+        self.bus.remove(f"ovos.phal.wifi.plugin.activate.{self.client_id}", self.handle_active_client_request)
+        self.bus.remove(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}", self.handle_deactivate_client_request)
+        self.client_id = None
 
-    def handle_activate(self, message=None):
-        self.client_active = True
-        self.bus.emit(Message("ovos.phal.nm.set.active.client", {
-                      "client": "ovos-PHAL-plugin-gui-network-client"}))
-        self.display_network_setup()
+    def handle_registration_failure(self, message=None):
+        if not self.registered:
+            error = message.data.get("error", "")
+            LOG.info(f"Registration Failure: {error}")
+            # Try to Register the Client with WIFI Plugin Again
+            self.register_client()
+    
+    def handle_activate_client_request(self, message=None):
         LOG.info("Gui Network Client Plugin Activated")
+        self.client_active = True
+        self.display_network_setup()
 
-    # Allow displaying different networking modes to the user to select in GUI
-    def display_mode_select(self, message=None):
-        self.manage_setup_display(
-            "gui-wifi-mode-selector", "network-mode-selector")
+    def handle_deactivate_client_request(self, message=None):
+        LOG.info("Gui Network Client Plugin Deactivated")
+        self.client_active = False
+        self.gui.release()
+                
+    def request_deactivate(self, message=None):
+        self.bus.emit(Message("ovos.phal.wifi.plugin.remove.active.client", {
+                      "client": "ovos-PHAL-plugin-gui-network-client"}))
+        LOG.info("Gui Network Client Plugin Deactivation Requested")
 
     # Actual GUI Networking Operations
     def display_network_setup(self, message=None):
-        self.manage_setup_display("network-select", "network-select")
+        LOG.info("In Display Network Setup")     
+        self.manage_setup_display("select-network", "network")
 
     def display_path_exit(self, message=None):
         self.client_active = False
-        self.bus.emit(Message("ovos.phal.nm.remove.active.client"))
+        self.request_deactivate()
 
         if not is_connected():
-            self.bus.emit(Message("ovos.phal.nm.display.mode.select"))
+            self.bus.emit(Message("ovos.phal.wifi.plugin.user.activated"))
         else:
             self.gui.release()
 
@@ -61,8 +100,7 @@ class GuiNetworkClientPlugin(PHALPlugin):
         self.manage_setup_display("setup-completed", "status")
         sleep(5)
         self.client_active = False
-        self.bus.emit(Message("ovos.phal.nm.remove.active.client"))
-        self.gui.release()
+        self.request_deactivate()
 
     def display_failure(self, message=None):
         """Wifi setup failed"""       
@@ -82,9 +120,9 @@ class GuiNetworkClientPlugin(PHALPlugin):
         self.display_network_setup()
 
     def manage_setup_display(self, state, page_type):
-        self.gui.clear()
+        self.log.info("In Displaying Page Function")
         page = join(dirname(__file__), "ui", "GuiClientLoader.qml")
-        if state == "select-network" and page_type == "select-network":
+        if state == "select-network" and page_type == "network":
             self.gui["page_type"] = "NetworkingLoader"
             self.gui["image"] = ""
             self.gui["label"] = ""
@@ -109,11 +147,10 @@ class GuiNetworkClientPlugin(PHALPlugin):
             self.gui["label"] = "Incorrect Password"
             self.gui["color"] = "#FF0000"
             self.gui.show_page(page, override_animations=True)
-        elif state == "gui-wifi-mode-selector" and page_type == "network-mode-selector":
-            self.gui["page_type"] = "ModeChoose"
-            self.gui.show_page(page, override_idle=True,
-                               override_animations=True)
-
+            
+    def handle_stop_setup(self, message=None):
+        self.handle_deactivate()
+        
     def shutdown(self):
         super().shutdown()
 
