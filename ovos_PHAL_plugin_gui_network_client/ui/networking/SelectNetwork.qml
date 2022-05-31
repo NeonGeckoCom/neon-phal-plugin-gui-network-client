@@ -138,7 +138,7 @@ Rectangle {
                 Kirigami.BasicListItem {
                     Layout.fillWidth: false
                     separatorVisible: false
-                    visible: networkStatus.networkStatus !== "Disconnected"
+                    visible: true
                     icon: "go-previous-symbolic"
                     text: i18n("Back")
                     Layout.preferredWidth: implicitWidth + height
