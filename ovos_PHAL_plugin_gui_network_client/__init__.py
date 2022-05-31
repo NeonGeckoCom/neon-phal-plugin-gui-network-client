@@ -102,6 +102,7 @@ class GuiNetworkClientPlugin(PHALPlugin):
     def display_success(self, message=None):
         self.manage_setup_display("setup-completed", "status")
         sleep(5)
+        self.bus.emit(Message("ovos.wifi.setup.completed"))
         self.client_active = False
         self.request_deactivate()
 
