@@ -143,6 +143,7 @@ Rectangle {
                     text: i18n("Back")
                     Layout.preferredWidth: implicitWidth + height
                     onClicked: {
+                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
                         networkingLoader.clear()
                         Mycroft.MycroftController.sendRequest("ovos.phal.gui.network.client.back", {})
                     }
@@ -157,6 +158,7 @@ Rectangle {
                     text: i18n("Refresh")
                     Layout.preferredWidth: implicitWidth + height
                     onClicked: {
+                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
                         page.refreshing = true;
                         connectionView.contentY = -Kirigami.Units.gridUnit * 4;
                     }
@@ -241,12 +243,18 @@ Rectangle {
                 Button {
                     Layout.preferredWidth: passField.width / 4 * 3
                     text: i18n("Connect")
-                    onClicked: passField.accepted();
+                    onClicked: {
+                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
+                        passField.accepted();
+                    }
                 }
                 Button {
                     Layout.preferredWidth: passField.width / 4 * 3
                     text: i18n("Cancel")
-                    onClicked: passwordLayer.close();
+                    onClicked: {
+                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
+                        passwordLayer.close();
+                    }
                 }
             }
             Item {
@@ -282,6 +290,7 @@ Rectangle {
                     text: i18n("Forget")
 
                     onClicked: {
+                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
                         removeConnection(networkName)
                         networkActions.close()
                     }
@@ -291,6 +300,7 @@ Rectangle {
                     text: i18n("Cancel")
 
                     onClicked: {
+                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
                         networkActions.close()
                     }
                 }

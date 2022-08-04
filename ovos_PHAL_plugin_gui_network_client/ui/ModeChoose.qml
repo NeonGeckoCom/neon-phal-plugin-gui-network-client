@@ -55,6 +55,7 @@ Rectangle {
                 anchors.fill: parent
 
                 onClicked: {
+                    Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("/sounds/ui_sounds_clicked.wav"))
                     Mycroft.MycroftController.sendRequest("ovos.phal.balena.on.device", {})
                 }
 
@@ -123,6 +124,7 @@ Rectangle {
                 anchors.fill: parent
 
                 onClicked: {
+                    Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("/sounds/ui_sounds_clicked.wav"))
                     Mycroft.MycroftController.sendRequest("ovos.phal.balena.on.mobile", {})
                 }
 
