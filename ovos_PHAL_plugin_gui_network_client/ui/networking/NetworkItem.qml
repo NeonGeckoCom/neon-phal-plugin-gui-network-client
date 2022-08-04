@@ -121,6 +121,8 @@ Kirigami.AbstractListItem {
     }
 
     onClicked: {
+        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
+
         if (!model.ConnectionPath) {
             console.log("No connection path")
             console.log(model.SecurityType)
