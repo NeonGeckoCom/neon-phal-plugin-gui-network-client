@@ -33,7 +33,6 @@ Kirigami.AbstractListItem {
                                                 model.SecurityType == PlasmaNM.Enums.Wpa2Psk)
 
     contentItem: Item {
-        implicitWidth: delegateLayout.implicitWidth;
         implicitHeight: delegateLayout.implicitHeight;
 
         ColumnLayout {
@@ -126,15 +125,13 @@ Kirigami.AbstractListItem {
         if (!model.ConnectionPath) {
             console.log("No connection path")
             console.log(model.SecurityType)
-            if (model.SecurityTypeString == "Insecure") {
-                console.log("Unknown security")
-                Mycroft.MycroftController.sendRequest("ovos.phal.nm.connect", { 
-                    "connectionName": model.ItemUniqueName,
-                    "password": "",
-                    "securityType": model.SecurityTypeString
+            if (model.SecurityTypeString == "Insecure" || model.SecurityType == PlasmaNM.Enums.UnknownSecurity || model.SecurityType == PlasmaNM.Enums.NoneSecurity) {
+                console.log("Insecure Network")
+                Mycroft.MycroftController.sendRequest("ovos.phal.nm.connect.open.network", {
+                    "connection_name": model.ItemUniqueName
                 })
             } else {
-                console.log("Known security")
+                console.log("Secure Network")
                 networkingLoader.devicePath = model.DevicePath
                 networkingLoader.specificPath = model.SpecificPath
                 networkingLoader.connectionName = connectionNameLabel.text
@@ -146,22 +143,13 @@ Kirigami.AbstractListItem {
             }
         } else if (model.ConnectionState == PlasmaNM.Enums.Deactivated) {
             networkingLoader.push(Qt.resolvedUrl("../networking/Connecting.qml"))
-            Mycroft.MycroftController.sendRequest("ovos.phal.nm.connect", {
-                "connection_name": model.ItemUniqueName,
-                "password": passwordLayer.password,
-                "security_type": model.SecurityTypeString
+            Mycroft.MycroftController.sendRequest("ovos.phal.nm.reconnect", {
+                "connection_name": model.ItemUniqueName
             })
         } else {
             Mycroft.MycroftController.sendRequest("ovos.phal.nm.disconnect", {
                 "connection_name": model.ItemUniqueName
             })
         }
-    }
-
-    onPressAndHold: {
-        pathToRemove = model.ConnectionPath
-        nameToRemove = model.ItemUniqueName
-        networkActions.networkName = model.ItemUniqueName
-        networkActions.open()
     }
 }

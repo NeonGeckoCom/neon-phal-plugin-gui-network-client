@@ -121,7 +121,7 @@ Rectangle {
                     model: appletProxyModel
                     currentIndex: -1
                     //boundsBehavior: Flickable.StopAtBounds
-                    delegate: NetworkItem{}
+                    delegate: NetworkItemParent{}
                 }
             }
 
@@ -196,8 +196,9 @@ Rectangle {
                 easing.type: Easing.InOutQuad
             }
         }
+
         background: Rectangle {
-            color: Qt.rgba(0, 0, 0, 0.8)
+            color: Qt.rgba(0, 0, 0, 0.95)
         }
 
         contentItem: ColumnLayout {
@@ -205,7 +206,7 @@ Rectangle {
             spacing: Kirigami.Units.gridUnit
 
             Kirigami.Heading {
-                level: 1
+                level: 2
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignHCenter
@@ -218,7 +219,11 @@ Rectangle {
                 id: passField
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
                 Layout.fillWidth: true
+                Layout.leftMargin: Mycroft.Units.gridUnit * 5
+                Layout.rightMargin: Mycroft.Units.gridUnit * 5
+                Layout.preferredHeight: Mycroft.Units.gridUnit * 4
                 placeholderText: i18n("Password...")
+
                 validator: RegExpValidator {
                     regExp: if (securityType == PlasmaNM.Enums.StaticWep) {
                                 /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
@@ -238,18 +243,21 @@ Rectangle {
                 }
             }
 
-            ColumnLayout {
+            RowLayout {
                 Layout.alignment: Qt.AlignCenter
                 Button {
-                    Layout.preferredWidth: passField.width / 4 * 3
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: Mycroft.Units.gridUnit * 5
                     text: i18n("Connect")
                     onClicked: {
                         Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
                         passField.accepted();
                     }
                 }
+
                 Button {
-                    Layout.preferredWidth: passField.width / 4 * 3
+                    Layout.fillWidth: true                    
+                    Layout.preferredHeight: Mycroft.Units.gridUnit * 5
                     text: i18n("Cancel")
                     onClicked: {
                         Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
@@ -259,51 +267,6 @@ Rectangle {
             }
             Item {
                 Layout.fillHeight: true
-            }
-        }
-    }
-
-    Kirigami.OverlaySheet {
-        id: networkActions
-        parent: networkSelectionView
-        showCloseButton: true
-        property var networkName
-
-        onSheetOpenChanged: {
-            if (sheetOpen) {
-                Qt.inputMethod.show();
-            }
-        }
-
-        contentItem: ColumnLayout {
-            implicitWidth: Kirigami.Units.gridUnit * 25
-
-            Label {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                wrapMode: Text.WordWrap
-                text: i18n("Are you sure you want to forget the network %1?", nameToRemove)
-            }
-            RowLayout {
-                Button {
-                    Layout.fillWidth: true
-                    text: i18n("Forget")
-
-                    onClicked: {
-                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
-                        removeConnection(networkName)
-                        networkActions.close()
-                    }
-                }
-                Button {
-                    Layout.fillWidth: true
-                    text: i18n("Cancel")
-
-                    onClicked: {
-                        Mycroft.SoundEffects.playClickedSound(Qt.resolvedUrl("../sounds/ui_sounds_clicked.wav"))
-                        networkActions.close()
-                    }
-                }
             }
         }
     }
