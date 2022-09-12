@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a2...HEAD)
+
+**Implemented enhancements:**
+
+- Refactor ui, re connection and Forced closed events [\#4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/4) ([AIIX](https://github.com/AIIX))
+
+## [V0.0.2a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a2) (2022-09-08)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...V0.0.2a2)
 
 **Merged pull requests:**
 
