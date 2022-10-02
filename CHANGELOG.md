@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a2...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a3...HEAD)
+
+**Merged pull requests:**
+
+- Update PyPI Action name and action spec [\#5](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/5) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [V0.0.2a3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a3) (2022-09-12)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a2...V0.0.2a3)
 
 **Implemented enhancements:**
 
