@@ -6,7 +6,7 @@ from mycroft_bus_client.message import Message, dig_for_message
 from ovos_plugin_manager.phal import PHALPlugin
 from ovos_utils.gui import GUIInterface
 from ovos_utils.log import LOG
-from ovos_utils.network_utils import is_connected
+from ovos_utils.network_utils import is_connected, get_ip
 
 
 class GuiNetworkClientPlugin(PHALPlugin):
@@ -120,6 +120,7 @@ class GuiNetworkClientPlugin(PHALPlugin):
     def display_connected_network_settings(self, message=None):
         self.connected_network_details = message.data.get("connection_details", {})
         self.gui["connectionDetails"] = self.connected_network_details
+        self.gui["ipAddress"] = get_ip()
         self.manage_setup_display("connected-network-settings", "network")
 
     def display_disconnected_network_settings(self, message=None):

@@ -35,16 +35,18 @@ Rectangle {
     property var podMainText
     property var podSubText
 
-    Item {
+    RowLayout {
         id: podLayout
         anchors.fill: parent
+        anchors.leftMargin: Mycroft.Units.gridUnit
+        anchors.rightMargin: Mycroft.Units.gridUnit
 
         Item {
             id: podIconItemArea
-            anchors.left: parent.left
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            width: Mycroft.Units.gridUnit * 3
+            Layout.preferredWidth: Mycroft.Units.gridUnit * 3
+            Layout.maximumWidth: Mycroft.Units.gridUnit * 3
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
             Kirigami.Icon {
                 id: podIconItem
@@ -63,15 +65,12 @@ Rectangle {
         }
 
         Label {
-            anchors.left: podIconItemArea.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.right: podSubTextItemArea.left
-            anchors.leftMargin: Mycroft.Units.gridUnit / 3
-            anchors.rightMargin: Mycroft.Units.gridUnit / 3
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             text: podControl.podMainText
             color: Kirigami.Theme.textColor
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: parent.height * 0.4
             elide: Text.ElideRight
@@ -79,14 +78,12 @@ Rectangle {
 
         Label {
             id: podSubTextItemArea
-            anchors.right: parent.right
-            anchors.rightMargin: Mycroft.Units.gridUnit / 3
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            width: Mycroft.Units.gridUnit * 6
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             text: podControl.podSubText
             color: Kirigami.Theme.textColor
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: parent.height * 0.4
             elide: Text.ElideRight
