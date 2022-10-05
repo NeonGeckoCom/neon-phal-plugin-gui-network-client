@@ -36,6 +36,7 @@ Rectangle {
     property string networkState: "Connected"
     property int networkStrength: connection.networkStrength ? connection.networkStrength : 0
     property string networkSpeed: connection.networkSpeed ? connection.networkSpeed : ""
+    property string networkAddress: sessionData.ipAddress ? sessionData.ipAddress : "127.0.0.1"
 
     Item {
         id: viewTopArea
@@ -99,7 +100,7 @@ Rectangle {
         }        
     }
 
-    Item {
+    Flickable {
         id: viewMiddleArea
         anchors.top: viewTopArea.bottom
         anchors.left: parent.left
@@ -107,6 +108,9 @@ Rectangle {
         anchors.bottom: viewBottomArea.top
         anchors.topMargin: Mycroft.Units.gridUnit / 2
         anchors.bottomMargin: Mycroft.Units.gridUnit
+        contentWidth: width
+        contentHeight: viewMiddleAreaLayout.implicitHeight
+        clip: true
 
         ColumnLayout {
             id: viewMiddleAreaLayout
@@ -133,6 +137,15 @@ Rectangle {
                 podIcon: "lock"
                 podMainText: "Security"
                 podSubText: networkSecurity
+            }
+
+            ViewPod {
+                id: ipAddressPod
+                Layout.fillWidth: true
+                Layout.preferredHeight: Mycroft.Units.gridUnit * 3
+                podIcon: "network-connect"
+                podMainText: "IP Address"
+                podSubText: networkAddress
             }
         }
     }
