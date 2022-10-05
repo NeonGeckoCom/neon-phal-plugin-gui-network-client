@@ -2,7 +2,19 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a3...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a4...HEAD)
+
+**Closed issues:**
+
+- missing readme [\#7](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/issues/7)
+
+**Merged pull requests:**
+
+- Fixes pods text positioning and elide issues, adds ipaddress pod [\#8](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/8) ([AIIX](https://github.com/AIIX))
+
+## [V0.0.2a4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a4) (2022-10-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a3...V0.0.2a4)
 
 **Merged pull requests:**
 
