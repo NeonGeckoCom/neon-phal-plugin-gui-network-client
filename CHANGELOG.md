@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a4...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a5...HEAD)
+
+**Closed issues:**
+
+- Network Speech and Security truncated in GUI [\#6](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/issues/6)
+
+## [V0.0.2a5](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a5) (2022-10-05)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a4...V0.0.2a5)
 
 **Closed issues:**
 
