@@ -1,12 +1,22 @@
 # PHAL plugin - GUI Network Client
 
-this plugin provides the GUI interface for the wifi setup and is part of a larger collection of Wifi client plugins
+GUI Network client is a graphical user frontend to network manager and allows configuring, modifying and deleting networks. This plugin is also utilizes Plasma Network Manager for additional model support.
+
+# Requirements
+
+This plugin requires the following:
+- Network Manager PHAL Plugin: https://github.com/OpenVoiceOS/ovos-PHAL-plugin-network-manager
+- Plasma Network Manager: https://invent.kde.org/plasma/plasma-nm
 
 # Install
 
 `pip install ovos-PHAL-plugin-gui-network-client`
 
-# Events
+# Event Details:
+
+##### Plugin Registeration and Activation
+
+The GUI network client registers itself as a networking plugin for the wifi client, The following events are used for managing registeration, deregisteration and activation status of the plugin.
 
 ```python
      # WIFI Plugin Registeration and Activation Specific Events        
@@ -15,11 +25,22 @@ this plugin provides the GUI interface for the wifi setup and is part of a large
         self.bus.on("ovos.phal.wifi.plugin.client.deregistered", self.handle_deregistered)
         self.bus.on("ovos.phal.wifi.plugin.client.registration.failure", self.handle_registration_failure)
         self.bus.on("ovos.phal.wifi.plugin.alive", self.register_client)
-        
+```
+
+##### Plugin Network Manager Interaction
+
+The GUI network client utilizes the Network Manager for providing functionality such as activation of connections and deactivation of connections, the Plugin listens for the following events to display a success and failure passed from the network manager to display the status of connection activation and deactivation.
+
+```python
         # OVOS PHAL NM EVENTS
         self.bus.on("ovos.phal.nm.connection.successful", self.display_success)
         self.bus.on("ovos.phal.nm.connection.failure", self.display_failure)
+```
+##### Plugin GUI Events
 
+The GUI network client utilizes the following button events that are emitted between the QML GUI and the python side of the plugin, they handle information flow and events flow between onscreen events and logicical operations of the plugin.
+
+```python
         # INTERNAL GUI EVENTS
         self.bus.on("ovos.phal.gui.network.client.back",
                     self.display_path_exit)
