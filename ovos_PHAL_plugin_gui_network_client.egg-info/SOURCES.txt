@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+ovos_PHAL_plugin_gui_network_client/__init__.py
+ovos_PHAL_plugin_gui_network_client/version.py
+ovos_PHAL_plugin_gui_network_client.egg-info/PKG-INFO
+ovos_PHAL_plugin_gui_network_client.egg-info/SOURCES.txt
+ovos_PHAL_plugin_gui_network_client.egg-info/dependency_links.txt
+ovos_PHAL_plugin_gui_network_client.egg-info/entry_points.txt
+ovos_PHAL_plugin_gui_network_client.egg-info/requires.txt
+ovos_PHAL_plugin_gui_network_client.egg-info/top_level.txt
+ovos_PHAL_plugin_gui_network_client.egg-info/zip-safe
