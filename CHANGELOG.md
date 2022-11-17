@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a5...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a6...HEAD)
+
+**Merged pull requests:**
+
+- Update license\_tests automation [\#10](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/10) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [V0.0.2a6](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a6) (2022-10-15)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a5...V0.0.2a6)
 
 **Closed issues:**
 
