@@ -69,6 +69,7 @@ Kirigami.AbstractListItem {
                         font.italic: model.ConnectionState == PlasmaNM.Enums.Activating ? true : false
                         text: model.ItemUniqueName
                         textFormat: Text.PlainText
+                        color: Kirigami.Theme.textColor
                     }
 
                     Kirigami.Heading {
@@ -78,6 +79,7 @@ Kirigami.AbstractListItem {
                         elide: Text.ElideRight
                         opacity: 0.6
                         text: itemText()
+                        color: Kirigami.Theme.textColor
                     }
                 }
             }
