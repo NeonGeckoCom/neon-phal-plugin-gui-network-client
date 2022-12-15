@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a6...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2...HEAD)
+
+**Merged pull requests:**
+
+- remove build files, fix text theme [\#11](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/11) ([AIIX](https://github.com/AIIX))
+
+## [V0.0.2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2) (2022-11-17)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a6...V0.0.2)
 
 **Merged pull requests:**
 
