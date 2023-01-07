@@ -63,14 +63,18 @@ class GuiNetworkClientPlugin(PHALPlugin):
             get_id = message.data.get("id", "")
             self.client_id = get_id
             self.registered = True        
-            self.bus.on(f"ovos.phal.wifi.plugin.activate.{self.client_id}", self.handle_activate_client_request)
-            self.bus.on(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}", self.handle_deactivate_client_request)
+            self.bus.on(f"ovos.phal.wifi.plugin.activate.{self.client_id}",
+                        self.handle_activate_client_request)
+            self.bus.on(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}",
+                        self.handle_deactivate_client_request)
             LOG.info(f"Client Registered with WIFI Plugin: {self.client_id}")
 
     def handle_deregistered(self, message=None):
         self.registered = False
-        self.bus.remove(f"ovos.phal.wifi.plugin.activate.{self.client_id}", self.handle_active_client_request)
-        self.bus.remove(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}", self.handle_deactivate_client_request)
+        self.bus.remove(f"ovos.phal.wifi.plugin.activate.{self.client_id}",
+                        self.handle_activate_client_request)
+        self.bus.remove(f"ovos.phal.wifi.plugin.deactivate.{self.client_id}",
+                        self.handle_deactivate_client_request)
         self.client_id = None
 
     def handle_registration_failure(self, message=None):
