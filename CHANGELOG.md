@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.3a1...HEAD)
+
+**Merged pull requests:**
+
+- Fix typo in event handler [\#12](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/12) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [V0.0.3a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.3a1) (2022-12-15)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2...V0.0.3a1)
 
 **Merged pull requests:**
 
