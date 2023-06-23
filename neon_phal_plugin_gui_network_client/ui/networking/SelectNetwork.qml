@@ -34,7 +34,7 @@ Rectangle {
     property string pathToRemove
     property string nameToRemove
     property bool isStartUp: false
-    
+
     function removeConnection(nameToRemove) {
         Mycroft.MycroftController.sendRequest("ovos.phal.nm.forget", {"connection_name": nameToRemove})
     }
@@ -178,7 +178,7 @@ Rectangle {
         property alias password: passField.text
         property var networkName
         property var securityType
-        
+
         function open() {
             passField.text = "";
             passField.forceActiveFocus();
@@ -256,7 +256,7 @@ Rectangle {
                 }
 
                 Button {
-                    Layout.fillWidth: true                    
+                    Layout.fillWidth: true
                     Layout.preferredHeight: Mycroft.Units.gridUnit * 5
                     text: i18n("Cancel")
                     onClicked: {

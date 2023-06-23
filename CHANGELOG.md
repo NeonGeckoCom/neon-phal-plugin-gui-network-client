@@ -1,58 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/HEAD)
+## [0.0.3a4](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/tree/0.0.3a4) (2023-06-23)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a6...HEAD)
-
-**Merged pull requests:**
-
-- Update license\_tests automation [\#10](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/10) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [V0.0.2a6](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a6) (2022-10-15)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a5...V0.0.2a6)
-
-**Closed issues:**
-
-- Network Speech and Security truncated in GUI [\#6](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/issues/6)
-
-## [V0.0.2a5](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a5) (2022-10-05)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a4...V0.0.2a5)
-
-**Closed issues:**
-
-- missing readme [\#7](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/issues/7)
+[Full Changelog](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...0.0.3a4)
 
 **Merged pull requests:**
 
-- Fixes pods text positioning and elide issues, adds ipaddress pod [\#8](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/8) ([AIIX](https://github.com/AIIX))
-
-## [V0.0.2a4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a4) (2022-10-02)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a3...V0.0.2a4)
-
-**Merged pull requests:**
-
-- Update PyPI Action name and action spec [\#5](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/5) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [V0.0.2a3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a3) (2022-09-12)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a2...V0.0.2a3)
-
-**Implemented enhancements:**
-
-- Refactor ui, re connection and Forced closed events [\#4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/4) ([AIIX](https://github.com/AIIX))
-
-## [V0.0.2a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a2) (2022-09-08)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...V0.0.2a2)
-
-**Merged pull requests:**
-
-- Fix package name in version\_file path in setup.py [\#3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/3) ([NeonDaniel](https://github.com/NeonDaniel))
-- Add PyPI and versioning automation scripts and workflows [\#2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/2) ([NeonDaniel](https://github.com/NeonDaniel))
-- add button sounds to follow rest of the system [\#1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/1) ([AIIX](https://github.com/AIIX))
+- Refactor package to `neon` to publish to PyPI [\#1](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/pull/1) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
