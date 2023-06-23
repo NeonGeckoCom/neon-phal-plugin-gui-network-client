@@ -12,7 +12,7 @@ from ovos_utils.network_utils import is_connected, get_ip
 class GuiNetworkClientPlugin(PHALPlugin):
 
     def __init__(self, bus=None, config=None):
-        super().__init__(bus=bus, name="ovos-PHAL-plugin-gui-network-client",
+        super().__init__(bus=bus, name="neon-phal-plugin-gui-network-client",
                          config=config)
         self.gui = GUIInterface(bus=self.bus, skill_id=self.name,
                                 config=self.config_core.get('gui'))
