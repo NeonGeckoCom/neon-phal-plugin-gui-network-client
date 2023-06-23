@@ -6,15 +6,14 @@ on:
     branches:
       - dev
     paths-ignore:
-      - 'ovos_PHAL_plugin_gui_network_client/version.py'
+      - 'neon_phal_plugin_gui_network_client/version.py'
       - 'test/**'
       - '.github/**'
       - '.gitignore'
       - 'LICENSE'
       - 'CHANGELOG.md'
       - 'MANIFEST.in'
-      - 'readme.md'
-      - 'scripts/**'
+      - 'README.md'
   workflow_dispatch:
 
 jobs:
@@ -23,7 +22,7 @@ jobs:
     secrets:
       PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
     with:
-      version_file: "ovos_PHAL_plugin_gui_network_client/version.py"
+      version_file: "neon_phal_plugin_gui_network_client/version.py"
       publish_prerelease: true
       update_changelog: true
       alpha_var: VERSION_ALPHA

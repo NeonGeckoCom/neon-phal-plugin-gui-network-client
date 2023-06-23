@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -8,7 +8,7 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 def get_version():
     """ Find the version of the package"""
     version = None
-    version_file = os.path.join(BASEDIR, 'ovos_PHAL_plugin_gui_network_client',
+    version_file = os.path.join(BASEDIR, 'neon_phal_plugin_gui_network_client',
                                 'version.py')
     major, minor, build, alpha = (None, None, None, None)
     with open(version_file) as f:
@@ -56,19 +56,19 @@ def get_description():
     return long_description
 
 
-PLUGIN_ENTRY_POINT = 'ovos-PHAL-plugin-gui-network-client=ovos_PHAL_plugin_gui_network_client:GuiNetworkClientPlugin'
+PLUGIN_ENTRY_POINT = 'neon-phal-plugin-gui-network-client=neon_phal_plugin_gui_network_client:GuiNetworkClientPlugin'
 setup(
-    name='ovos-PHAL-plugin-gui-network-client',
+    name='neon-phal-plugin-gui-network-client',
     version=get_version(),
-    description='A plugin for OpenVoiceOS hardware abstraction layer',
+    description='A PHAL plugin for Neon/OVOS',
     long_description=get_description(),
     long_description_content_type="text/markdown",
-    url='https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client',
-    author='Aiix',
-    author_email='aix.m@outlook.com',
+    url='https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client',
+    author='Neongecko',
+    author_email='defelopers@neon.ai',
     license='Apache-2.0',
-    packages=['ovos_PHAL_plugin_gui_network_client'],
-    package_data={'': package_files('ovos_PHAL_plugin_gui_network_client')},
+    packages=find_packages(),
+    package_data={'': package_files('neon_phal_plugin_gui_network_client')},
     install_requires=required("requirements.txt"),
     zip_safe=True,
     include_package_data=True,
