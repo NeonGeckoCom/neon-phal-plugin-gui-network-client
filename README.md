@@ -1,3 +1,5 @@
+*Note*: This plugin is [planned to be deprecated](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/issues/2).
+
 # PHAL plugin - GUI Network Client
 
 GUI Network client is a graphical user frontend to network manager and allows configuring, modifying and deleting networks. This plugin is also utilizes Plasma Network Manager for additional model support.
