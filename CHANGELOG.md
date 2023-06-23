@@ -1,49 +1,12 @@
 # Changelog
 
-## [0.0.3a3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/0.0.3a3) (2023-06-21)
+## [0.0.3a4](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/tree/0.0.3a4) (2023-06-23)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.3a2...0.0.3a3)
-
-**Implemented enhancements:**
-
-- Pass configuration to GUIInterface [\#1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/1) ([NeonDaniel](https://github.com/NeonDaniel))
+[Full Changelog](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...0.0.3a4)
 
 **Merged pull requests:**
 
-- Update automation to shared actions [\#4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/4) ([NeonDaniel](https://github.com/NeonDaniel))
-- Update messagebus package dependency [\#3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/pull/3) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [V0.0.3a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.3a2) (2023-01-07)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.3a1...V0.0.3a2)
-
-## [V0.0.3a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.3a1) (2022-12-15)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2...V0.0.3a1)
-
-## [V0.0.2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2) (2022-11-17)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a6...V0.0.2)
-
-## [V0.0.2a6](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a6) (2022-10-15)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a5...V0.0.2a6)
-
-## [V0.0.2a5](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a5) (2022-10-05)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a4...V0.0.2a5)
-
-## [V0.0.2a4](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a4) (2022-10-02)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a3...V0.0.2a4)
-
-## [V0.0.2a3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a3) (2022-09-12)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/V0.0.2a2...V0.0.2a3)
-
-## [V0.0.2a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/tree/V0.0.2a2) (2022-09-08)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...V0.0.2a2)
+- Refactor package to `neon` to publish to PyPI [\#1](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/pull/1) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
