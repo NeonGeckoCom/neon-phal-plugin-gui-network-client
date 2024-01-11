@@ -4,7 +4,7 @@ from time import sleep
 
 from ovos_bus_client.message import Message, dig_for_message
 from ovos_plugin_manager.phal import PHALPlugin
-from ovos_utils.gui import GUIInterface
+from ovos_bus_client.apis.gui import GUIInterface
 from ovos_utils.log import LOG
 from ovos_utils.network_utils import is_connected, get_ip
 
