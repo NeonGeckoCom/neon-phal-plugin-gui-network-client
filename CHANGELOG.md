@@ -1,12 +1,12 @@
 # Changelog
 
-## [0.0.3a4](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/tree/0.0.3a4) (2023-06-23)
+## [0.0.4a1](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/tree/0.0.4a1) (2024-01-11)
 
-[Full Changelog](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/compare/d6c422592d546db624963b4d0f0f7eaab92191a4...0.0.3a4)
+[Full Changelog](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/compare/0.0.3...0.0.4a1)
 
 **Merged pull requests:**
 
-- Refactor package to `neon` to publish to PyPI [\#1](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/pull/1) ([NeonDaniel](https://github.com/NeonDaniel))
+- Update dependencies and imports to resolve deprecation warnings [\#3](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/pull/3) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
