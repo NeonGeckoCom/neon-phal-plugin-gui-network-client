@@ -1,12 +1,12 @@
 # Changelog
 
-## [0.0.5a1](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/tree/0.0.5a1) (2024-04-08)
+## [0.0.6a1](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/tree/0.0.6a1) (2024-09-19)
 
-[Full Changelog](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/compare/0.0.4...0.0.5a1)
+[Full Changelog](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/compare/0.0.5...0.0.6a1)
 
 **Merged pull requests:**
 
-- Update ovos-utils to allow 0.X versions [\#5](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/pull/5) ([NeonDaniel](https://github.com/NeonDaniel))
+- Update dependencies to allow OVOS 0.x dependency resolution [\#7](https://github.com/NeonGeckoCom/neon-phal-plugin-gui-network-client/pull/7) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
